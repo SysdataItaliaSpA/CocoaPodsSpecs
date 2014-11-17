@@ -89,8 +89,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Widgets' do |ad|
-    ad.source_files   = 'Core/Widgets'
-    ad.source_files   = 'Core/Widgets/**'
+    ad.source_files   = 'Core/Widgets', 'Core/Widgets/**'
   end
 
   s.subspec 'Workflow' do |ad|
