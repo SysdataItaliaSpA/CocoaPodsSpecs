@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   # Preserve the layout of headers in the Code directory
-  s.header_mappings_dir = 'Core'
+  # s.header_mappings_dir = 'Core'
 
   ### Subspecs
 
@@ -49,51 +49,51 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Additions' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'CrashReport' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'DataModel' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'Download' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'Keychain' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'Location' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'Logger' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'Social' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'Sync' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'ViewControllers' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'Widgets' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
   s.subspec 'Workflow' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Core/Additions'
   end
 
 
