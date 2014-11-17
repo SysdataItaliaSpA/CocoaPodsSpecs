@@ -53,47 +53,47 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'CrashReport' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/CrashReport'
   end
 
   s.subspec 'DataModel' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/DataModel'
   end
 
   s.subspec 'Download' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/Download'
   end
 
   s.subspec 'Keychain' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/Keychain'
   end
 
   s.subspec 'Location' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/Location'
   end
 
   s.subspec 'Logger' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/Logger'
   end
 
   s.subspec 'Social' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/Social'
   end
 
   s.subspec 'Sync' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/Sync'
   end
 
   s.subspec 'ViewControllers' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/ViewControllers'
   end
 
   s.subspec 'Widgets' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/Widgets'
   end
 
   s.subspec 'Workflow' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Core/Workflow'
   end
 
 
