@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Download' do |dw|
-    adw.source_files   = 'Core/Download'
+    aw.source_files   = 'Core/Download'
   end
 
   s.subspec 'Keychain' do |kc|
