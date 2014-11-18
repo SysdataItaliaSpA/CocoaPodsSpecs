@@ -49,6 +49,7 @@ Pod::Spec.new do |s|
     cs.dependency 'FXKeychain', '1.5.2'
     cs.dependency 'SSZipArchive', '0.3.2'
     cs.dependency 'objective-zip', '0.8.3'
+
   end
 
   s.subspec 'Additions' do |ad|
@@ -57,6 +58,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'CrashReport' do |cr|
     cr.source_files   = 'Core/CrashReport'
+    cr.preserve_paths = 'Core/CrashReport/Crashlytics.framework'
+    cr.vendored_frameworks = 'Core/CrashReport/Crashlytics.framework'
   end
 
   s.subspec 'DataModel' do |dm|
