@@ -58,8 +58,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'CrashReport' do |cr|
     cr.source_files   = 'Core/CrashReport'
-    cr.preserve_paths = 'Crashlytics.framework'
-    cr.vendored_frameworks = 'Crashlytics.framework'
+    cr.preserve_paths = 'CrashReport/Crashlytics.framework'
+    cr.vendored_frameworks = 'CrashReport/Crashlytics.framework'
   end
 
   s.subspec 'DataModel' do |dm|
