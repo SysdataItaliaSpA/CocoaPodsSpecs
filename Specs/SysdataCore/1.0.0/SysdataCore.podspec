@@ -21,6 +21,9 @@ Pod::Spec.new do |s|
   ### Subspecs
 
   s.subspec 'Core' do |cs|
+
+    cs.source_files   = 'Core'
+
     cs.dependency 'SysdataCore/Additions'
     cs.dependency 'SysdataCore/CrashReport'
     cs.dependency 'SysdataCore/DataModel'
@@ -33,19 +36,19 @@ Pod::Spec.new do |s|
     cs.dependency 'SysdataCore/ViewControllers'
     cs.dependency 'SysdataCore/Widgets'
     cs.dependency 'SysdataCore/Workflow'
-    cs.source_files   = 'Core'
+
 
     cs.dependency 'RestKit', '0.23.3-sysdata1'
     cs.dependency 'CocoaLumberjack', '1.9.2-sysdata1'
     cs.dependency 'FastPdfKit', '1.0.0-sysdata1'
-    # cd.dependency 'MagicalRecord/Shorthand', '2.2'
-    # cd.dependency 'MBProgressHUD', '0.9'
-    # cd.dependency 'UIColor-Utilities', '1.0.1'
-    # cd.dependency 'DCIntrospect-ARC', '0.0.8'
-    # cd.dependency 'FrameAccessor', '1.3.2'
-    # cd.dependency 'FXKeychain', '1.5.2'
-    # cd.dependency 'SSZipArchive', '0.3.2'
-    # cd.dependency 'objective-zip', '0.8.3'
+    cs.dependency 'MagicalRecord/Shorthand', '2.2'
+    cs.dependency 'MBProgressHUD', '0.9'
+    cs.dependency 'UIColor-Utilities', '1.0.1'
+    cs.dependency 'DCIntrospect-ARC', '0.0.8'
+    cs.dependency 'FrameAccessor', '1.3.2'
+    cs.dependency 'FXKeychain', '1.5.2'
+    cs.dependency 'SSZipArchive', '0.3.2'
+    cs.dependency 'objective-zip', '0.8.3'
   end
 
   s.subspec 'Additions' do |ad|
