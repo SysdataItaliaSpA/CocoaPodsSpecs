@@ -57,9 +57,10 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'CrashReport' do |cr|
-    cr.source_files   = 'Core/CrashReport'
-    cr.preserve_paths = 'CrashReport/Crashlytics.framework'
-    cr.vendored_frameworks = 'CrashReport/Crashlytics.framework'
+    cr.source_files   = 'Core/CrashReport', 'Core/CrashReport/Crashlytics.framework/Versions/A/Headers/*.h'
+    cr.ios.vendored_frameworks = 'Core/CrashReport/Crashlytics.framework'
+    cr.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
+    cr.preserve_paths = 'Core/CrashReport/Crashlytics.framework'
   end
 
   s.subspec 'DataModel' do |dm|
