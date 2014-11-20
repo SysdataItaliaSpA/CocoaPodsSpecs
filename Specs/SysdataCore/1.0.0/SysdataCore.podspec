@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   # Exclude optional modules
   s.default_subspec = 'Core'
 
-  s.source_files   = 'Code'
+  # s.source_files   = 'Code'
 
   # Preserve the layout of headers in the Code directory
   s.header_mappings_dir = 'Code'
@@ -94,10 +94,14 @@ EOS
   end
 
   s.subspec 'Download' do |dw|
-    dw.source_files   = 'Code/Download', 'Code/Download/Additions'
+    dw.source_files   =  'Code/SDDownload.h', 'Code/Download', 'Code/Download/Additions'
 
     dw.dependency 'SysdataCore/Core'
     dw.dependency 'AFNetworking', '~> 1.3.0'
+
+    lg.prefix_header_contents = <<-EOS
+#import <SDDownload.h>
+EOS
   end
 
   s.subspec 'Keychain' do |kc|
