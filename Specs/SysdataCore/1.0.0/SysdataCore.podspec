@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
     cs.dependency 'SSZipArchive', '0.3.2'
     cs.dependency 'objective-zip', '0.8.3'
 
-    cd.prefix_header_contents = <<-EOS
+    cs.prefix_header_contents = <<-EOS
 #import <SDCore.h>
 EOS
   end
