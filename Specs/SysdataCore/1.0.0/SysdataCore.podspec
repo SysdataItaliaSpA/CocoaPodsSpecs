@@ -79,7 +79,7 @@ EOS
   end
 
   s.subspec 'Download' do |dw|
-    dw.source_files   = 'Code/Download'
+    dw.source_files   = 'Code/Download', 'Code/Download/Additions'
   end
 
   s.subspec 'Keychain' do |kc|
@@ -104,19 +104,21 @@ EOS
   end
 
   s.subspec 'Sync' do |sy|
-    sy.source_files   = 'Code/Sync'
+    sy.source_files   = 'Code/Sync', 'Code/Sync/Additions'
   end
 
   s.subspec 'ViewControllers' do |vc|
-    vc.source_files   = 'Code/ViewControllers'
+    vc.source_files   = 'Code/ViewControllers', 'Code/ViewControllers/Base', 'Code/ViewControllers/Containers'
+    vc.resources = 'Code/ViewControllers/*.{xib}' , 'Code/ViewControllers/Base/*.{xib}', 'Code/ViewControllers/Containers/*.{xib}'
   end
 
   s.subspec 'Widgets' do |wd|
     wd.source_files   = 'Code/Widgets', 'Code/Widgets/**/*.{h,m}'
+    wd.resources = 'Code/Widgets/*.{xib}', 'Code/Widgets/**/*.{xib}'
   end
 
   s.subspec 'Workflow' do |wf|
-    wf.source_files   = 'Code/Workflow'
+    wf.source_files   = 'Code/Workflow', 'Code/Workflow/Segues'
   end
 
 
