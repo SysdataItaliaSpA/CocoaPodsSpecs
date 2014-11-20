@@ -15,6 +15,8 @@ Pod::Spec.new do |s|
   # Exclude optional modules
   s.default_subspec = 'Core'
 
+  s.source_files   = 'Code'
+
   # Preserve the layout of headers in the Code directory
   s.header_mappings_dir = 'Code'
 
@@ -22,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |cs|
 
-    cs.source_files   = 'Code'
+    cs.source_files   = 'Code/Core'
 
     cs.dependency 'SysdataCore/Additions'
     cs.dependency 'SysdataCore/Logger'
@@ -52,6 +54,9 @@ Pod::Spec.new do |s|
     cs.dependency 'SSZipArchive', '0.3.2'
     cs.dependency 'objective-zip', '0.8.3'
 
+    cd.prefix_header_contents = <<-EOS
+#import <SDCore.h>
+EOS
   end
 
   s.subspec 'CoreData' do |cd|
@@ -80,6 +85,7 @@ EOS
 
   s.subspec 'Download' do |dw|
     dw.source_files   = 'Code/Download', 'Code/Download/Additions'
+    dw.dependency 'SysdataCore/Core'
   end
 
   s.subspec 'Keychain' do |kc|
