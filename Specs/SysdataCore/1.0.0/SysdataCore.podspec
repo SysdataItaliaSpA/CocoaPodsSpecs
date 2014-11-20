@@ -98,6 +98,7 @@ EOS
 
   s.subspec 'Logger' do |lg|
     lg.source_files   = 'Code/Logger'
+
     lg.dependency 'CocoaLumberjack', '1.9.2-sysdata1'
 
     lg.prefix_header_contents = <<-EOS
@@ -121,6 +122,8 @@ EOS
   s.subspec 'Widgets' do |wd|
     wd.source_files   = 'Code/Widgets', 'Code/Widgets/**/*.{h,m}'
     wd.resources = 'Code/Widgets/*.{xib}', 'Code/Widgets/**/*.{xib}'
+
+    wd.dependency 'SysdataCore/Core'
   end
 
   s.subspec 'Workflow' do |wf|
