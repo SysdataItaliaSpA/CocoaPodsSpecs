@@ -95,6 +95,7 @@ EOS
     dw.source_files   = 'Code/Download', 'Code/Download/Additions'
 
     dw.dependency 'SysdataCore/Core'
+    dw.dependency 'AFNetworking', '~> 1.3.0'
   end
 
   s.subspec 'Keychain' do |kc|
@@ -150,7 +151,7 @@ EOS
     wf.source_files   = 'Code/Workflow', 'Code/Workflow/Segues'
 
     wf.dependency 'SysdataCore/Core'
-    lg.prefix_header_contents = <<-EOS
+    wf.prefix_header_contents = <<-EOS
 #import <SDWorkflow.h>
 EOS
   end
