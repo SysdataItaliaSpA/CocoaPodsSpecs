@@ -54,6 +54,13 @@ Pod::Spec.new do |s|
 
   end
 
+  s.subspec 'CoreData' do |cd|
+    cd.source_files   = 'Code/CoreData', 'Code/CoreData/Additions'
+    cd.prefix_header_contents = <<-EOS
+#import <CoreData/CoreData.h>
+EOS
+  end
+
   s.subspec 'Additions' do |ad|
     ad.source_files   = 'Code/Additions'
     ad.dependency 'SysdataCore/Logger'
@@ -68,6 +75,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'DataModel' do |dm|
     dm.source_files   = 'Core/DataModel'
+    dm.dependency 'SysdataCore/CoreData'
   end
 
   s.subspec 'Download' do |dw|
