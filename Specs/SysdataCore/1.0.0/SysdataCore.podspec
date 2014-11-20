@@ -57,6 +57,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Additions' do |ad|
     ad.source_files   = 'Code/Additions'
+    ad.dependency 'SysdataCore/Logger'
   end
 
   s.subspec 'CrashReport' do |cr|
