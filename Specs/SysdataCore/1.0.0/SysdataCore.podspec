@@ -42,7 +42,6 @@ Pod::Spec.new do |s|
 
 
     cs.dependency 'RestKit', '0.23.3-sysdata1'
-    cs.dependency 'CocoaLumberjack', '1.9.2-sysdata1'
     cs.dependency 'FastPdfKit', '1.0.0-sysdata1'
     cs.dependency 'MagicalRecord/Shorthand', '2.2'
     cs.dependency 'MBProgressHUD', '0.9'
@@ -85,6 +84,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Logger' do |lg|
     lg.source_files   = 'Code/Logger'
+    lg.dependency 'CocoaLumberjack', '1.9.2-sysdata1'
   end
 
   s.subspec 'Social' do |sc|
