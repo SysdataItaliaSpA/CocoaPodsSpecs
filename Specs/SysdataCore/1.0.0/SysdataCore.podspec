@@ -77,6 +77,9 @@ EOS
 
   s.subspec 'CrashReport' do |cr|
     cr.source_files   = 'Code/CrashReport', 'Code/CrashReport/Crashlytics.framework/Versions/A/Headers/*.h'
+
+    cr.ios.frameworks = 'MessageUI'
+
     cr.ios.vendored_frameworks = 'Code/CrashReport/Crashlytics.framework'
     cr.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
     cr.preserve_paths = 'Code/CrashReport/Crashlytics.framework'
