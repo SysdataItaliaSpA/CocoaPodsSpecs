@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |cs|
 
-    cs.source_files   = 'Code/Core'
+    cs.source_files   = 'Code/SDCore.h', 'Code/Core'
 
     cs.dependency 'SysdataCore/Additions'
     cs.dependency 'SysdataCore/Logger'
@@ -134,10 +134,14 @@ EOS
   end
 
   s.subspec 'ViewControllers' do |vc|
-    vc.source_files   = 'Code/ViewControllers', 'Code/ViewControllers/Base', 'Code/ViewControllers/Containers'
+    vc.source_files   = 'Code/SDViewControllers.h', 'Code/ViewControllers', 'Code/ViewControllers/Base', 'Code/ViewControllers/Containers'
     vc.resources = 'Code/ViewControllers/*.{xib}' , 'Code/ViewControllers/Base/*.{xib}', 'Code/ViewControllers/Containers/*.{xib}'
 
     vc.dependency 'SysdataCore/Core'
+
+    vc.prefix_header_contents = <<-EOS
+#import <SDViewControllers.h>
+EOS
   end
 
   s.subspec 'Widgets' do |wd|
@@ -148,7 +152,7 @@ EOS
   end
 
   s.subspec 'Workflow' do |wf|
-    wf.source_files   = 'Code/Workflow', 'Code/Workflow/Segues'
+    wf.source_files   = 'Code/SDWorkflow.h', 'Code/Workflow', 'Code/Workflow/Segues'
 
     wf.dependency 'SysdataCore/Core'
     wf.prefix_header_contents = <<-EOS
