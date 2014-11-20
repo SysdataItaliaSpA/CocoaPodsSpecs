@@ -25,17 +25,20 @@ Pod::Spec.new do |s|
     cs.source_files   = 'Core'
 
     cs.dependency 'SysdataCore/Additions'
-    cs.dependency 'SysdataCore/CrashReport'
-    cs.dependency 'SysdataCore/DataModel'
-    cs.dependency 'SysdataCore/Download'
-    cs.dependency 'SysdataCore/Keychain'
-    cs.dependency 'SysdataCore/Location'
     cs.dependency 'SysdataCore/Logger'
-    cs.dependency 'SysdataCore/Social'
-    cs.dependency 'SysdataCore/Sync'
     cs.dependency 'SysdataCore/ViewControllers'
-    cs.dependency 'SysdataCore/Widgets'
     cs.dependency 'SysdataCore/Workflow'
+    
+    # cs.dependency 'SysdataCore/CrashReport'
+    # cs.dependency 'SysdataCore/DataModel'
+    # cs.dependency 'SysdataCore/Download'
+    # cs.dependency 'SysdataCore/Keychain'
+    # cs.dependency 'SysdataCore/Location'
+    # cs.dependency 'SysdataCore/Social'
+    # cs.dependency 'SysdataCore/Sync'
+
+    # cs.dependency 'SysdataCore/Widgets'
+
 
 
     cs.dependency 'RestKit', '0.23.3-sysdata1'
