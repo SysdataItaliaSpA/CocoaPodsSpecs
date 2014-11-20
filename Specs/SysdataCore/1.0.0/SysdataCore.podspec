@@ -150,6 +150,9 @@ EOS
     wf.source_files   = 'Code/Workflow', 'Code/Workflow/Segues'
 
     wf.dependency 'SysdataCore/Core'
+    lg.prefix_header_contents = <<-EOS
+#import <SDWorkflow.h>
+EOS
   end
 
 
