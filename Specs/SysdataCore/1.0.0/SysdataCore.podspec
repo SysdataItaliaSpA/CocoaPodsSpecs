@@ -42,15 +42,12 @@ Pod::Spec.new do |s|
     # cs.dependency 'SysdataCore/Widgets'
 
 
-
-    cs.dependency 'RestKit', '0.23.3-sysdata1'
     cs.dependency 'FastPdfKit', '1.0.0-sysdata1'
-    cs.dependency 'MagicalRecord/Shorthand', '2.2'
     cs.dependency 'MBProgressHUD', '0.9'
     cs.dependency 'UIColor-Utilities', '1.0.1'
     cs.dependency 'DCIntrospect-ARC', '0.0.8'
     cs.dependency 'FrameAccessor', '1.3.2'
-    cs.dependency 'FXKeychain', '1.5.2'
+
     cs.dependency 'SSZipArchive', '0.3.2'
     cs.dependency 'objective-zip', '0.8.3'
 
@@ -61,6 +58,11 @@ EOS
 
   s.subspec 'CoreData' do |cd|
     cd.source_files   = 'Code/CoreData', 'Code/CoreData/Additions'
+
+    cd.dependency 'RestKit', '0.23.3-sysdata1'
+    cd.dependency 'MagicalRecord/Shorthand', '2.2'
+    cd.dependency 'SysdataCore/Core'
+
     cd.prefix_header_contents = <<-EOS
 #import <CoreData/CoreData.h>
 EOS
@@ -68,6 +70,8 @@ EOS
 
   s.subspec 'Additions' do |ad|
     ad.source_files   = 'Code/Additions'
+
+    ad.dependency 'SysdataCore/Core'
     ad.dependency 'SysdataCore/Logger'
   end
 
@@ -76,24 +80,33 @@ EOS
     cr.ios.vendored_frameworks = 'Code/CrashReport/Crashlytics.framework'
     cr.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
     cr.preserve_paths = 'Code/CrashReport/Crashlytics.framework'
+
+    cr.dependency 'SysdataCore/Core'
   end
 
   s.subspec 'DataModel' do |dm|
     dm.source_files   = 'Core/DataModel'
+
+    dm.dependency 'SysdataCore/Core'
     dm.dependency 'SysdataCore/CoreData'
   end
 
   s.subspec 'Download' do |dw|
     dw.source_files   = 'Code/Download', 'Code/Download/Additions'
+
     dw.dependency 'SysdataCore/Core'
   end
 
   s.subspec 'Keychain' do |kc|
     kc.source_files   = 'Code/Keychain'
+
+    kc.dependency 'FXKeychain', '1.5.2'
   end
 
   s.subspec 'Location' do |lo|
     lo.source_files   = 'Code/Location'
+
+    lo.dependency 'SysdataCore/Core'
   end
 
   s.subspec 'Logger' do |lg|
@@ -108,15 +121,22 @@ EOS
 
   s.subspec 'Social' do |sc|
     sc.source_files   = 'Code/Social'
+
+    sc.dependency 'SysdataCore/Core'
   end
 
   s.subspec 'Sync' do |sy|
     sy.source_files   = 'Code/Sync', 'Code/Sync/Additions'
+
+    dw.dependency 'SysdataCore/Core'
+    dw.dependency 'SysdataCore/CoreData'
   end
 
   s.subspec 'ViewControllers' do |vc|
     vc.source_files   = 'Code/ViewControllers', 'Code/ViewControllers/Base', 'Code/ViewControllers/Containers'
     vc.resources = 'Code/ViewControllers/*.{xib}' , 'Code/ViewControllers/Base/*.{xib}', 'Code/ViewControllers/Containers/*.{xib}'
+
+    vc.dependency 'SysdataCore/Core'
   end
 
   s.subspec 'Widgets' do |wd|
@@ -128,6 +148,8 @@ EOS
 
   s.subspec 'Workflow' do |wf|
     wf.source_files   = 'Code/Workflow', 'Code/Workflow/Segues'
+
+    wf.dependency 'SysdataCore/Core'
   end
 
 
