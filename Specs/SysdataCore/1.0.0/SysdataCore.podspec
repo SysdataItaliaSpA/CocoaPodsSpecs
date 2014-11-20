@@ -85,6 +85,10 @@ Pod::Spec.new do |s|
   s.subspec 'Logger' do |lg|
     lg.source_files   = 'Code/Logger'
     lg.dependency 'CocoaLumberjack', '1.9.2-sysdata1'
+
+    lg.prefix_header_contents = <<-EOS
+#import <DDLog.h>
+EOS
   end
 
   s.subspec 'Social' do |sc|
