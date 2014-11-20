@@ -45,11 +45,11 @@ Pod::Spec.new do |s|
     cs.dependency 'FastPdfKit', '1.0.0-sysdata1'
     cs.dependency 'MBProgressHUD', '0.9'
     cs.dependency 'UIColor-Utilities', '1.0.1'
-    cs.dependency 'DCIntrospect-ARC', '0.0.8'
+
     cs.dependency 'FrameAccessor', '1.3.2'
 
-    cs.dependency 'SSZipArchive', '0.3.2'
-    cs.dependency 'objective-zip', '0.8.3'
+    cs.dependency 'DCIntrospect-ARC', '0.0.8'
+
 
     cs.prefix_header_contents = <<-EOS
 #import <SDCore.h>
@@ -81,6 +81,8 @@ EOS
     cr.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
     cr.preserve_paths = 'Code/CrashReport/Crashlytics.framework'
 
+    cr.dependency 'SSZipArchive', '0.3.2'
+    cr.dependency 'objective-zip', '0.8.3'
     cr.dependency 'SysdataCore/Core'
   end
 
