@@ -128,8 +128,8 @@ EOS
   s.subspec 'Sync' do |sy|
     sy.source_files   = 'Code/Sync', 'Code/Sync/Additions'
 
-    dw.dependency 'SysdataCore/Core'
-    dw.dependency 'SysdataCore/CoreData'
+    sy.dependency 'SysdataCore/Core'
+    sy.dependency 'SysdataCore/CoreData'
   end
 
   s.subspec 'ViewControllers' do |vc|
