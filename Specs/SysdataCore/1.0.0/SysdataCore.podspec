@@ -99,7 +99,7 @@ EOS
     dw.dependency 'SysdataCore/Core'
     dw.dependency 'AFNetworking', '~> 1.3.0'
 
-    lg.prefix_header_contents = <<-EOS
+    dw.prefix_header_contents = <<-EOS
 #import <SDDownload.h>
 EOS
   end
