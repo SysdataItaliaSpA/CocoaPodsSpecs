@@ -12,23 +12,23 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.platform     = :ios, "6.0"
 
-  # Exclude optional Search and Testing modules
+  # Exclude optional modules
   s.default_subspec = 'Core'
 
   # Preserve the layout of headers in the Code directory
-  # s.header_mappings_dir = 'Core'
+  s.header_mappings_dir = 'Code'
 
   ### Subspecs
 
   s.subspec 'Core' do |cs|
 
-    cs.source_files   = 'Core'
+    cs.source_files   = 'Code'
 
     cs.dependency 'SysdataCore/Additions'
     cs.dependency 'SysdataCore/Logger'
     cs.dependency 'SysdataCore/ViewControllers'
     cs.dependency 'SysdataCore/Workflow'
-    
+
     # cs.dependency 'SysdataCore/CrashReport'
     # cs.dependency 'SysdataCore/DataModel'
     # cs.dependency 'SysdataCore/Download'
@@ -56,14 +56,14 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Additions' do |ad|
-    ad.source_files   = 'Core/Additions'
+    ad.source_files   = 'Code/Additions'
   end
 
   s.subspec 'CrashReport' do |cr|
-    cr.source_files   = 'Core/CrashReport', 'Core/CrashReport/Crashlytics.framework/Versions/A/Headers/*.h'
+    cr.source_files   = 'Code/CrashReport', 'Code/CrashReport/Crashlytics.framework/Versions/A/Headers/*.h'
     cr.ios.vendored_frameworks = 'CrashReport/Crashlytics.framework'
     cr.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
-    cr.preserve_paths = 'Core/CrashReport/Crashlytics.framework'
+    cr.preserve_paths = 'Code/CrashReport/Crashlytics.framework'
   end
 
   s.subspec 'DataModel' do |dm|
@@ -71,39 +71,39 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Download' do |dw|
-    dw.source_files   = 'Core/Download'
+    dw.source_files   = 'Code/Download'
   end
 
   s.subspec 'Keychain' do |kc|
-    kc.source_files   = 'Core/Keychain'
+    kc.source_files   = 'Code/Keychain'
   end
 
   s.subspec 'Location' do |lo|
-    lo.source_files   = 'Core/Location'
+    lo.source_files   = 'Code/Location'
   end
 
   s.subspec 'Logger' do |lg|
-    lg.source_files   = 'Core/Logger'
+    lg.source_files   = 'Code/Logger'
   end
 
   s.subspec 'Social' do |sc|
-    sc.source_files   = 'Core/Social'
+    sc.source_files   = 'Code/Social'
   end
 
   s.subspec 'Sync' do |sy|
-    sy.source_files   = 'Core/Sync'
+    sy.source_files   = 'Code/Sync'
   end
 
   s.subspec 'ViewControllers' do |vc|
-    vc.source_files   = 'Core/ViewControllers'
+    vc.source_files   = 'Code/ViewControllers'
   end
 
   s.subspec 'Widgets' do |wd|
-    wd.source_files   = 'Core/Widgets', 'Core/Widgets/**/*.{h,m}'
+    wd.source_files   = 'Code/Widgets', 'Code/Widgets/**/*.{h,m}'
   end
 
   s.subspec 'Workflow' do |wf|
-    wf.source_files   = 'Core/Workflow'
+    wf.source_files   = 'Code/Workflow'
   end
 
 
