@@ -143,7 +143,7 @@ EOS
   end
 
   s.subspec 'ViewControllers' do |vc|
-    vc.source_files   = 'Code/SDViewControllers.h', 'Code/ViewControllers', 'Code/ViewControllers/Base', 'Code/ViewControllers/Containers'
+    vc.source_files   = 'Code/SDViewControllers.h', 'Code/ViewControllers', 'Code/ViewControllers/Additions', 'Code/ViewControllers/Base', 'Code/ViewControllers/Containers'
     vc.resources = 'Code/ViewControllers/*.{xib}' , 'Code/ViewControllers/Base/*.{xib}', 'Code/ViewControllers/Containers/*.{xib}'
 
     vc.dependency 'SysdataCore/Core'
