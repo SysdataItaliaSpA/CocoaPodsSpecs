@@ -105,6 +105,7 @@ EOS
     dw.dependency 'AFNetworking', '~> 1.3.0'
 
     dw.prefix_header_contents = <<-EOS
+#import <SystemConfiguration/SystemConfiguration.h>
 #import <SDDownload.h>
 EOS
   end
