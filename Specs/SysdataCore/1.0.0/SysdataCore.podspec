@@ -99,6 +99,8 @@ EOS
   s.subspec 'Download' do |dw|
     dw.source_files   =  'Code/SDDownload.h', 'Code/Download', 'Code/Download/Additions'
 
+    dw.ios.frameworks = 'SystemConfiguration'
+
     dw.dependency 'SysdataCore/Core'
     dw.dependency 'AFNetworking', '~> 1.3.0'
 
