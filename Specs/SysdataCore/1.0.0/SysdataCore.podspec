@@ -56,27 +56,19 @@ Pod::Spec.new do |s|
 EOS
   end
 
-  s.subspec 'CoreData' do |cd|
-    cd.source_files   = 'Code/CoreData', 'Code/CoreData/Additions'
-
-    cd.dependency 'RestKit', '0.23.3-sysdata1'
-    cd.dependency 'MagicalRecord/Shorthand', '2.2'
-    cd.dependency 'SysdataCore/Core'
-
-    cd.prefix_header_contents = <<-EOS
-#import <CoreData/CoreData.h>
-EOS
-  end
-
   s.subspec 'Additions' do |ad|
-    ad.source_files   = 'Code/Additions'
+    ad.source_files   = 'Code/SDAdditions.h', 'Code/Additions'
 
     ad.dependency 'SysdataCore/Core'
     ad.dependency 'SysdataCore/Logger'
+
+    ad.prefix_header_contents = <<-EOS
+#import <SDAdditions.h>
+EOS
   end
 
   s.subspec 'CrashReport' do |cr|
-    cr.source_files   = 'Code/CrashReport', 'Code/CrashReport/Crashlytics.framework/Versions/A/Headers/*.h'
+    cr.source_files   = 'Code/SDCrashReport.h', 'Code/CrashReport', 'Code/CrashReport/Crashlytics.framework/Versions/A/Headers/*.h'
 
     cr.ios.frameworks = 'MessageUI'
 
@@ -87,13 +79,33 @@ EOS
     cr.dependency 'SSZipArchive', '0.3.2'
     cr.dependency 'objective-zip', '0.8.3'
     cr.dependency 'SysdataCore/Core'
+
+    cr.prefix_header_contents = <<-EOS
+#import <SDCrashReport.h>
+EOS
+  end
+
+  s.subspec 'CoreData' do |cd|
+    cd.source_files   = 'Code/SDCoreData.h', 'Code/CoreData', 'Code/CoreData/Additions'
+
+    cd.dependency 'RestKit', '0.23.3-sysdata1'
+    cd.dependency 'MagicalRecord/Shorthand', '2.2'
+    cd.dependency 'SysdataCore/Core'
+
+    cd.prefix_header_contents = <<-EOS
+#import <SDCoreData.h>
+EOS
   end
 
   s.subspec 'DataModel' do |dm|
-    dm.source_files   = 'Core/DataModel'
+    dm.source_files   = 'Code/SDDataModel.h', 'Core/DataModel'
 
     dm.dependency 'SysdataCore/Core'
     dm.dependency 'SysdataCore/CoreData'
+
+    dm.prefix_header_contents = <<-EOS
+#import <SDDataModel.h>
+EOS
   end
 
   s.subspec 'Download' do |dw|
@@ -105,44 +117,59 @@ EOS
     dw.dependency 'AFNetworking', '~> 1.3.0'
 
     dw.prefix_header_contents = <<-EOS
-#import <SystemConfiguration/SystemConfiguration.h>
 #import <SDDownload.h>
 EOS
   end
 
   s.subspec 'Keychain' do |kc|
-    kc.source_files   = 'Code/Keychain'
+    kc.source_files   = 'Code/SDKeychain.h', 'Code/Keychain'
 
     kc.dependency 'FXKeychain', '1.5.2'
+
+    kc.prefix_header_contents = <<-EOS
+#import <SDKeychain.h>
+EOS
   end
 
   s.subspec 'Location' do |lo|
-    lo.source_files   = 'Code/Location'
+    lo.source_files   = 'Code/SDLocation.h', 'Code/Location'
 
     lo.dependency 'SysdataCore/Core'
+
+    lo.prefix_header_contents = <<-EOS
+#import <SDLocation.h>
+EOS
   end
 
   s.subspec 'Logger' do |lg|
-    lg.source_files   = 'Code/Logger'
+    lg.source_files   = 'Code/SDLogger.h', 'Code/Logger'
 
     lg.dependency 'CocoaLumberjack', '1.9.2-sysdata1'
 
     lg.prefix_header_contents = <<-EOS
-#import <DDLog.h>
+#import <SDLogger.h>
 EOS
   end
 
   s.subspec 'Social' do |sc|
-    sc.source_files   = 'Code/Social'
+    sc.source_files   = 'Code/SDSocial.h', 'Code/Social'
 
     sc.dependency 'SysdataCore/Core'
+
+    sc.prefix_header_contents = <<-EOS
+#import <SDSocial.h>
+EOS
   end
 
   s.subspec 'Sync' do |sy|
-    sy.source_files   = 'Code/Sync', 'Code/Sync/Additions'
+    sy.source_files   = 'Code/SDSync.h', 'Code/Sync', 'Code/Sync/Additions'
 
     sy.dependency 'SysdataCore/Core'
     sy.dependency 'SysdataCore/CoreData'
+
+    sy.prefix_header_contents = <<-EOS
+#import <SDSync.h>
+EOS
   end
 
   s.subspec 'ViewControllers' do |vc|
@@ -157,10 +184,14 @@ EOS
   end
 
   s.subspec 'Widgets' do |wd|
-    wd.source_files   = 'Code/Widgets', 'Code/Widgets/**/*.{h,m}'
+    wd.source_files   = 'Code/SDWidgets.h', 'Code/Widgets', 'Code/Widgets/**/*.{h,m}'
     wd.resources = 'Code/Widgets/*.{xib}', 'Code/Widgets/**/*.{xib}'
 
     wd.dependency 'SysdataCore/Core'
+
+    wd.prefix_header_contents = <<-EOS
+#import <SDWidgets.h>
+EOS
   end
 
   s.subspec 'Workflow' do |wf|
