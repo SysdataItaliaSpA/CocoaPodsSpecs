@@ -147,6 +147,7 @@ EOS
     lg.dependency 'CocoaLumberjack', '1.9.2-sysdata1'
 
     lg.prefix_header_contents = <<-EOS
+#import <DDLog.h>
 #import <SDLogger.h>
 EOS
   end
