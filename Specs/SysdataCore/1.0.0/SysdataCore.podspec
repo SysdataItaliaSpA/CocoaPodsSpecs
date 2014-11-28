@@ -99,7 +99,7 @@ EOS
   end
 
   s.subspec 'DataModel' do |dm|
-    dm.source_files   = 'Code/SDDataModel.h', 'Core/DataModel'
+    dm.source_files   = 'Code/SDDataModel.h', 'Code/DataModel'
 
     dm.dependency 'MagicalRecord/Shorthand', '2.2'
 
