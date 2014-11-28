@@ -167,12 +167,12 @@ EOS
     sy.default_subspec = 'SyncCore'
 
     sy.subspec 'SyncCore' do |sycore|
-      score.source_files   = 'Code/SDSync.h', 'Code/Sync', 'Code/Sync/Additions'
+      sycore.source_files   = 'Code/SDSync.h', 'Code/Sync', 'Code/Sync/Additions'
 
-      score.dependency 'SysdataCore/Core'
-      score.dependency 'SysdataCore/CoreData'
+      sycore.dependency 'SysdataCore/Core'
+      sycore.dependency 'SysdataCore/CoreData'
 
-      score.prefix_header_contents = <<-EOS
+      sycore.prefix_header_contents = <<-EOS
       #import <SDSync.h>
       EOS
     end
