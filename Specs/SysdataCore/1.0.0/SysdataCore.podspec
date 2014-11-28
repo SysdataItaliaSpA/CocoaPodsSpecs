@@ -164,9 +164,9 @@ EOS
 
   s.subspec 'Sync' do |sy|
 
-    sy.default_subspec = 'SyncCore'
+    sy.default_subspec = 'Core'
 
-    sy.subspec 'SyncCore' do |sycore|
+    sy.subspec 'Core' do |sycore|
       sycore.source_files   = 'Code/SDSync.h', 'Code/Sync', 'Code/Sync/Additions'
 
       sycore.dependency 'SysdataCore/Core'
@@ -177,18 +177,23 @@ EOS
       EOS
     end
 
-    sy.subspec 'SyncHTTP' do |syhttp|
+    sy.subspec 'HTTP' do |syhttp|
       syhttp.source_files   = 'Code/SDSyncHTTP.h', 'Code/Sync/HTTP'
+
+      syhttp.dependency 'SysdataCore/Sync/Core'
 
       syhttp.prefix_header_contents = <<-EOS
       #import <SDSyncHTTP.h>
       EOS
     end
 
-    sy.subspec 'SyncMQTT' do |symqtt|
+    sy.subspec 'MQTT' do |symqtt|
       symqtt.source_files   = 'Code/SDSyncMQTT.h', 'Code/Sync/MQTT'
 
       symqtt.dependency 'MQTTKit', '0.1.0'
+
+      symqtt.dependency 'SysdataCore/Sync/Core'
+
       symqtt.prefix_header_contents = <<-EOS
       #import <SDSyncMQTT.h>
       EOS
