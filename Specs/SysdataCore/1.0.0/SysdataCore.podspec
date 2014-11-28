@@ -102,7 +102,7 @@ EOS
   s.subspec 'DataModel' do |dm|
     dm.source_files   = 'Code/SDDataModel.h', 'Core/DataModel'
 
-    cd.dependency 'MagicalRecord/Shorthand', '2.2'
+    dm.dependency 'MagicalRecord/Shorthand', '2.2'
 
     dm.dependency 'SysdataCore/Core'
     dm.dependency 'SysdataCore/CoreData'
