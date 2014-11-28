@@ -85,6 +85,17 @@ EOS
 EOS
   end
 
+  s.subspec 'Analytics' do |an|
+    an.source_files   = 'Code/SDAnalytics.h', 'Code/Analytics'
+
+    an.dependency 'GoogleAnalytics-iOS-SDK', '3.10'
+    an.dependency 'SysdataCore/Core'
+
+    an.prefix_header_contents = <<-EOS
+    #import <SDAnalytics.h>
+    EOS
+  end
+
   s.subspec 'CoreData' do |cd|
     cd.source_files   = 'Code/SDCoreData.h', 'Code/CoreData', 'Code/CoreData/Additions'
 
