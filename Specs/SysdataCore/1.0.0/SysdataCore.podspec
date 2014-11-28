@@ -92,7 +92,6 @@ EOS
 
     cd.dependency 'RestKit', '0.23.3-sysdata1'
     cd.dependency 'SysdataCore/Core'
-    cd.dependency 'SysdataCore/DataModel'
 
     cd.prefix_header_contents = <<-EOS
 #import <SDCoreData.h>
@@ -174,7 +173,7 @@ EOS
       sycore.source_files   = 'Code/SDSync.h', 'Code/Sync', 'Code/Sync/Additions'
 
       sycore.dependency 'SysdataCore/Core'
-      sycore.dependency 'SysdataCore/CoreData'
+      sycore.dependency 'SysdataCore/DataModel'
 
       sycore.prefix_header_contents = <<-EOS
       #import <SDSync.h>
