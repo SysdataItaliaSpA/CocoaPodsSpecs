@@ -88,9 +88,11 @@ EOS
   s.subspec 'CoreData' do |cd|
     cd.source_files   = 'Code/SDCoreData.h', 'Code/CoreData', 'Code/CoreData/Additions'
 
+    cd.ios.frameworks = 'CoreData'
+
     cd.dependency 'RestKit', '0.23.3-sysdata1'
-    cd.dependency 'MagicalRecord/Shorthand', '2.2'
     cd.dependency 'SysdataCore/Core'
+    cd.dependency 'SysdataCore/DataModel'
 
     cd.prefix_header_contents = <<-EOS
 #import <SDCoreData.h>
@@ -99,6 +101,8 @@ EOS
 
   s.subspec 'DataModel' do |dm|
     dm.source_files   = 'Code/SDDataModel.h', 'Core/DataModel'
+
+    cd.dependency 'MagicalRecord/Shorthand', '2.2'
 
     dm.dependency 'SysdataCore/Core'
     dm.dependency 'SysdataCore/CoreData'
