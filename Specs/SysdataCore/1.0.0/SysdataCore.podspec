@@ -31,17 +31,6 @@ Pod::Spec.new do |s|
     cs.dependency 'SysdataCore/ViewControllers'
     cs.dependency 'SysdataCore/Workflow'
 
-    # cs.dependency 'SysdataCore/CrashReport'
-    # cs.dependency 'SysdataCore/DataModel'
-    # cs.dependency 'SysdataCore/Download'
-    # cs.dependency 'SysdataCore/Keychain'
-    # cs.dependency 'SysdataCore/Location'
-    # cs.dependency 'SysdataCore/Social'
-    # cs.dependency 'SysdataCore/Sync'
-
-    # cs.dependency 'SysdataCore/Widgets'
-
-
     cs.dependency 'FastPdfKit', '1.0.0-sysdata1'
     cs.dependency 'MBProgressHUD', '0.9'
     cs.dependency 'UIColor-Utilities', '1.0.1'
@@ -125,7 +114,7 @@ EOS
   s.subspec 'Download' do |dw|
     dw.source_files   =  'Code/SDDownload.h', 'Code/Download', 'Code/Download/Additions'
 
-    dw.ios.frameworks = 'SystemConfiguration'
+    dw.ios.frameworks = 'SystemConfiguration', 'MobileCoreServices'
 
     dw.dependency 'SysdataCore/Core'
     dw.dependency 'AFNetworking', '~> 1.3.0'
@@ -183,6 +172,8 @@ EOS
     sy.subspec 'Core' do |sycore|
       sycore.source_files   = 'Code/SDSync.h', 'Code/Sync', 'Code/Sync/Additions'
 
+      sycore.ios.frameworks = 'SystemConfiguration', 'MobileCoreServices'
+
       sycore.dependency 'SysdataCore/Core'
       sycore.dependency 'SysdataCore/DataModel'
 
@@ -227,14 +218,42 @@ EOS
   end
 
   s.subspec 'Widgets' do |wd|
-    wd.source_files   = 'Code/SDWidgets.h', 'Code/Widgets', 'Code/Widgets/**/*.{h,m}'
-    wd.resources = 'Code/Widgets/*.{xib}', 'Code/Widgets/**/*.{xib}'
+
+    wd.default_subspec = 'Core'
+
+    wd.source_files   = 'Code/SDWidgets.h', 'Code/Widgets'
+    wd.resources = 'Code/Widgets/*.{xib}'
 
     wd.dependency 'SysdataCore/Core'
 
     wd.prefix_header_contents = <<-EOS
 #import <SDWidgets.h>
 EOS
+
+    wd.subspec 'Core' do |wdcore|
+
+      wdcore.source_files   = 'Code/SDWidgetsCore.h', 'Code/Widgets/Core' 'Code/Widgets/Core/**/*.{h,m}'
+      wdcore.resources = 'Code/Widgets/Core/*.{xib}', 'Code/Widgets/Core/**/*.{xib}'
+
+      wdcore.dependency 'SysdataCore/Widgets'
+
+      wdcore.prefix_header_contents = <<-EOS
+      #import <SDWidgetsCore.h>
+      EOS
+    end
+
+    wd.subspec 'Other' do |wdother|
+
+      wdother.source_files   = 'Code/SDWidgetsOther.h', 'Code/Widgets/Other' 'Code/Widgets/Other/**/*.{h,m}'
+      wdother.resources = 'Code/Widgets/Other/*.{xib}', 'Code/Widgets/Other/**/*.{xib}'
+
+      wdother.dependency 'SysdataCore/Widgets'
+
+      wdother.prefix_header_contents = <<-EOS
+      #import <SDWidgetsOther.h>
+      EOS
+    end
+
   end
 
   s.subspec 'Workflow' do |wf|
