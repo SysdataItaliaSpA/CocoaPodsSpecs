@@ -163,31 +163,37 @@ EOS
   end
 
   s.subspec 'Sync' do |sy|
-    sy.source_files   = 'Code/SDSync.h', 'Code/Sync', 'Code/Sync/Additions'
 
-    sy.dependency 'SysdataCore/Core'
-    sy.dependency 'SysdataCore/CoreData'
+    sy.default_subspec = 'SyncCore'
 
-    sy.prefix_header_contents = <<-EOS
-#import <SDSync.h>
-EOS
-  end
+    sy.subspec 'SyncCore' do |sycore|
+      score.source_files   = 'Code/SDSync.h', 'Code/Sync', 'Code/Sync/Additions'
 
-  s.subspec 'Sync/SyncHTTP' do |syhttp|
-    syhttp.source_files   = 'Code/SDSyncHTTP.h', 'Code/Sync/HTTP'
+      score.dependency 'SysdataCore/Core'
+      score.dependency 'SysdataCore/CoreData'
 
-    syhttp.prefix_header_contents = <<-EOS
-    #import <SDSyncHTTP.h>
-    EOS
-  end
+      score.prefix_header_contents = <<-EOS
+      #import <SDSync.h>
+      EOS
+    end
 
-  s.subspec 'Sync/SyncMQTT' do |symqtt|
-    symqtt.source_files   = 'Code/SDSyncMQTT.h', 'Code/Sync/MQTT'
+    sy.subspec 'SyncHTTP' do |syhttp|
+      syhttp.source_files   = 'Code/SDSyncHTTP.h', 'Code/Sync/HTTP'
 
-    symqtt.dependency 'MQTTKit', '0.1.0'
-    symqtt.prefix_header_contents = <<-EOS
-    #import <SDSyncMQTT.h>
-    EOS
+      syhttp.prefix_header_contents = <<-EOS
+      #import <SDSyncHTTP.h>
+      EOS
+    end
+
+    sy.subspec 'SyncMQTT' do |symqtt|
+      symqtt.source_files   = 'Code/SDSyncMQTT.h', 'Code/Sync/MQTT'
+
+      symqtt.dependency 'MQTTKit', '0.1.0'
+      symqtt.prefix_header_contents = <<-EOS
+      #import <SDSyncMQTT.h>
+      EOS
+    end
+
   end
 
   s.subspec 'ViewControllers' do |vc|
