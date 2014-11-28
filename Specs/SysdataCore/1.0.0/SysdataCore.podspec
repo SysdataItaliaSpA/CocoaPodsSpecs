@@ -220,25 +220,16 @@ EOS
   s.subspec 'Widgets' do |wd|
 
     wd.default_subspec = 'Core'
-
-    wd.source_files   = 'Code/SDWidgets.h', 'Code/Widgets'
-    wd.resources = 'Code/Widgets/*.{xib}'
-
-    wd.dependency 'SysdataCore/Core'
-
-    wd.prefix_header_contents = <<-EOS
-#import <SDWidgets.h>
-EOS
-
+    
     wd.subspec 'Core' do |wdcore|
 
-      wdcore.source_files   = 'Code/SDWidgetsCore.h', 'Code/Widgets/Core' 'Code/Widgets/Core/**/*.{h,m}'
-      wdcore.resources = 'Code/Widgets/Core/*.{xib}', 'Code/Widgets/Core/**/*.{xib}'
+      wdcore.source_files   = 'Code/SDWidgets.h', 'Code/Widgets', 'Code/SDWidgetsCore.h', 'Code/Widgets/Core' 'Code/Widgets/Core/**/*.{h,m}'
+      wdcore.resources = 'Code/Widgets/*.{xib}', 'Code/Widgets/Core/*.{xib}', 'Code/Widgets/Core/**/*.{xib}'
 
-      wdcore.dependency 'SysdataCore/Widgets'
+      wdcore.dependency 'SysdataCore/Core'
 
       wdcore.prefix_header_contents = <<-EOS
-      #import <SDWidgetsCore.h>
+      #import <SDWidgets.h>
       EOS
     end
 
@@ -247,7 +238,7 @@ EOS
       wdother.source_files   = 'Code/SDWidgetsOther.h', 'Code/Widgets/Other' 'Code/Widgets/Other/**/*.{h,m}'
       wdother.resources = 'Code/Widgets/Other/*.{xib}', 'Code/Widgets/Other/**/*.{xib}'
 
-      wdother.dependency 'SysdataCore/Widgets'
+      wdother.dependency 'SysdataCore/Widgets/Core'
 
       wdother.prefix_header_contents = <<-EOS
       #import <SDWidgetsOther.h>
