@@ -211,6 +211,7 @@ EOS
     vc.resources = 'Code/ViewControllers/*.{xib}' , 'Code/ViewControllers/Base/*.{xib}', 'Code/ViewControllers/Containers/*.{xib}'
 
     vc.dependency 'SysdataCore/Core'
+    vc.dependency 'SysdataCore/Widgets/Core'
 
     vc.prefix_header_contents = <<-EOS
 #import <SDViewControllers.h>
@@ -220,7 +221,7 @@ EOS
   s.subspec 'Widgets' do |wd|
 
     wd.default_subspec = 'Core'
-    
+
     wd.subspec 'Core' do |wdcore|
 
       wdcore.source_files   = 'Code/SDWidgets.h', 'Code/Widgets', 'Code/SDWidgetsCore.h', 'Code/Widgets/Core' 'Code/Widgets/Core/**/*.{h,m}'
