@@ -224,7 +224,7 @@ EOS
 
     wd.subspec 'Core' do |wdcore|
 
-      wdcore.source_files   = 'Code/SDWidgets.h', 'Code/Widgets', 'Code/Widgets/Core' 'Code/Widgets/Core/**/*.{h,m}'
+      wdcore.source_files   = 'Code/SDWidgets.h', 'Code/Widgets', 'Code/Widgets/Core', 'Code/Widgets/Core/**/*.{h,m}'
       wdcore.resources = 'Code/Widgets/*.{xib}', 'Code/Widgets/Core/*.{xib}', 'Code/Widgets/Core/**/*.{xib}'
 
       wdcore.dependency 'SysdataCore/Core'
