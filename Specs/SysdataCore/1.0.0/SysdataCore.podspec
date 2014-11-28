@@ -173,7 +173,7 @@ EOS
 EOS
   end
 
-  s.subspec 'SyncHTTP' do |syhttp|
+  s.subspec 'Sync/SyncHTTP' do |syhttp|
     syhttp.source_files   = 'Code/SDSyncHTTP.h', 'Code/Sync/HTTP'
 
     syhttp.prefix_header_contents = <<-EOS
@@ -181,7 +181,7 @@ EOS
     EOS
   end
 
-  s.subspec 'SyncMQTT' do |symqtt|
+  s.subspec 'Sync/SyncMQTT' do |symqtt|
     symqtt.source_files   = 'Code/SDSyncMQTT.h', 'Code/Sync/MQTT'
 
     symqtt.dependency 'MQTTKit', '0.1.0'
