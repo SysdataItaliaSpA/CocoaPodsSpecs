@@ -277,7 +277,7 @@ EOS
       docpdf.dependency 'SysdataCore/DocReader/Core'
 
       docpdf.prefix_header_contents = <<-EOS
-      #import <SDFastPDFKit.h>
+      #import <SDDocReaderFastPDFKit.h>
       EOS
     end
 
