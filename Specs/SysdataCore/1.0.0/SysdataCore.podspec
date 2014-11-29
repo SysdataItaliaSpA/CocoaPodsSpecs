@@ -31,14 +31,10 @@ Pod::Spec.new do |s|
     cs.dependency 'SysdataCore/ViewControllers'
     cs.dependency 'SysdataCore/Workflow'
 
-    cs.dependency 'FastPdfKit', '1.0.0-sysdata1'
     cs.dependency 'MBProgressHUD', '0.9'
     cs.dependency 'UIColor-Utilities', '1.0.1'
-
     cs.dependency 'FrameAccessor', '1.3.2'
-
     cs.dependency 'DCIntrospect-ARC', '0.0.8'
-
 
     cs.prefix_header_contents = <<-EOS
 #import <SDCore.h>
@@ -54,6 +50,38 @@ EOS
     ad.prefix_header_contents = <<-EOS
 #import <SDAdditions.h>
 EOS
+  end
+
+  s.subspec 'Logger' do |lg|
+    lg.source_files   = 'Code/SDLogger.h', 'Code/Logger'
+
+    lg.dependency 'CocoaLumberjack', '1.9.2-sysdata1'
+
+    lg.prefix_header_contents = <<-EOS
+    #import <DDLog.h>
+    #import <SDLogger.h>
+    EOS
+  end
+
+  s.subspec 'ViewControllers' do |vc|
+    vc.source_files   = 'Code/SDViewControllers.h', 'Code/ViewControllers', 'Code/ViewControllers/Additions', 'Code/ViewControllers/Base', 'Code/ViewControllers/Containers'
+    vc.resources = 'Code/ViewControllers/*.{xib}' , 'Code/ViewControllers/Base/*.{xib}', 'Code/ViewControllers/Containers/*.{xib}'
+
+    vc.dependency 'SysdataCore/Core'
+    vc.dependency 'SysdataCore/Widgets/Core'
+
+    vc.prefix_header_contents = <<-EOS
+    #import <SDViewControllers.h>
+    EOS
+  end
+
+  s.subspec 'Workflow' do |wf|
+    wf.source_files   = 'Code/SDWorkflow.h', 'Code/Workflow', 'Code/Workflow/Segues'
+
+    wf.dependency 'SysdataCore/Core'
+    wf.prefix_header_contents = <<-EOS
+    #import <SDWorkflow.h>
+    EOS
   end
 
   s.subspec 'CrashReport' do |cr|
@@ -144,17 +172,6 @@ EOS
 EOS
   end
 
-  s.subspec 'Logger' do |lg|
-    lg.source_files   = 'Code/SDLogger.h', 'Code/Logger'
-
-    lg.dependency 'CocoaLumberjack', '1.9.2-sysdata1'
-
-    lg.prefix_header_contents = <<-EOS
-#import <DDLog.h>
-#import <SDLogger.h>
-EOS
-  end
-
   s.subspec 'Social' do |sc|
     sc.source_files   = 'Code/SDSocial.h', 'Code/Social'
 
@@ -206,18 +223,6 @@ EOS
 
   end
 
-  s.subspec 'ViewControllers' do |vc|
-    vc.source_files   = 'Code/SDViewControllers.h', 'Code/ViewControllers', 'Code/ViewControllers/Additions', 'Code/ViewControllers/Base', 'Code/ViewControllers/Containers'
-    vc.resources = 'Code/ViewControllers/*.{xib}' , 'Code/ViewControllers/Base/*.{xib}', 'Code/ViewControllers/Containers/*.{xib}'
-
-    vc.dependency 'SysdataCore/Core'
-    vc.dependency 'SysdataCore/Widgets/Core'
-
-    vc.prefix_header_contents = <<-EOS
-#import <SDViewControllers.h>
-EOS
-  end
-
   s.subspec 'Widgets' do |wd|
 
     wd.default_subspec = 'Core'
@@ -236,7 +241,7 @@ EOS
 
     wd.subspec 'Other' do |wdother|
 
-      wdother.source_files   = 'Code/SDWidgetsOther.h', 'Code/Widgets/Other' 'Code/Widgets/Other/**/*.{h,m}'
+      wdother.source_files   = 'Code/SDWidgetsOther.h', 'Code/Widgets/Other', 'Code/Widgets/Other/**/*.{h,m}'
       wdother.resources = 'Code/Widgets/Other/*.{xib}', 'Code/Widgets/Other/**/*.{xib}'
 
       wdother.dependency 'SysdataCore/Widgets/Core'
@@ -248,14 +253,34 @@ EOS
 
   end
 
-  s.subspec 'Workflow' do |wf|
-    wf.source_files   = 'Code/SDWorkflow.h', 'Code/Workflow', 'Code/Workflow/Segues'
+  s.subspec 'DocReader' do |doc|
 
-    wf.dependency 'SysdataCore/Core'
-    wf.prefix_header_contents = <<-EOS
-#import <SDWorkflow.h>
-EOS
+    doc.default_subspec = 'Core'
+
+    doc.subspec 'Core' do |doccore|
+
+      doccore.source_files   = 'Code/SDDocReader.h', 'Code/DocReader'
+
+      doccore.dependency 'SysdataCore/Core'
+
+      doccore.prefix_header_contents = <<-EOS
+      #import <SDDocReader.h>
+      EOS
+    end
+
+    doc.subspec 'FastPDFKit' do |docpdf|
+
+      docpdf.source_files   = 'Code/SDDocReaderFastPDFKit.h', 'Code/DocReader/FastPDFKit'
+
+      docpdf.dependency 'FastPdfKit', '1.0.0-sysdata1'
+
+      docpdf.dependency 'SysdataCore/DocReader/Core'
+
+      docpdf.prefix_header_contents = <<-EOS
+      #import <SDFastPDFKit.h>
+      EOS
+    end
+
   end
-
 
 end
