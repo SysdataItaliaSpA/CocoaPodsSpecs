@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   # s.source_files   = 'Code'
 
   # Preserve the layout of headers in the Code directory
-  s.header_mappings_dir = 'Code'
+  # s.header_mappings_dir = 'Code'
 
   ### Subspecs
 
