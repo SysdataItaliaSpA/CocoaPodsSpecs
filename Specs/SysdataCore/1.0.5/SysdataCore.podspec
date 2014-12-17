@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             =  'SysdataCore'
-  s.version          =  '1.0.4'
+  s.version          =  '1.0.5'
   s.summary          =  'Sysdata Core Library'
   s.homepage         =  'http://www.sysdata.it'
   s.social_media_url =  'https://twitter.com/sysdataitalia'
