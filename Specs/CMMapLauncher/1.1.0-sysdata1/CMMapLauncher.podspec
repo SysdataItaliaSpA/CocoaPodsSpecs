@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = 'SysdataItalia S.p.A'
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/citymapper/CMMapLauncher.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/SysdataItaliaSpA/CMMapLauncher.git", :tag => "#{s.version}" }
   s.source_files  = 'CMMapLauncher'
   s.framework  = 'MapKit'
   s.requires_arc = true
