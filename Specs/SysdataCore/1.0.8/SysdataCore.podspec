@@ -235,7 +235,7 @@ EOS
     sy.subspec 'MQTTClient' do |symqttclient|
       symqttclient.source_files   = 'Code/SDSyncMQTTClient.h', 'Code/Sync/MQTTClient'
 
-      symqttclient.dependency 'MQTTClient', '0.0.2-sysdata1'
+      symqttclient.dependency 'MQTT-Client-Framework', '0.0.2-sysdata1'
 
       symqttclient.dependency 'SysdataCore/Sync/Core'
 
