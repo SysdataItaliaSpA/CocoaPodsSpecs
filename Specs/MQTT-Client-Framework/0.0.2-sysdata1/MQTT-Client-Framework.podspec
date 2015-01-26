@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/ckrey/MQTT-Client-Framework"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Christoph Krey" => "krey.christoph@gmail.com" }
-  s.source       = { :git => "https://github.com/ckrey/MQTT-Client-Framework.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/SysdataItaliaSpA/MQTT-Client-Framework.git", :tag => "#{s.version}" }
 
   s.source_files = "MQTTClient/MQTTClient", "MQTTClient/MQTTClient/**/*.{h,m}"
   s.requires_arc = true
