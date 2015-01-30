@@ -87,7 +87,7 @@ EOS
   s.subspec 'Authentication' do |au|
     au.source_files   = 'Code/SDAuthentication.h', 'Code/Authentication'
 
-    au.dependency 'SysdataCore/Core'
+    #au.dependency 'SysdataCore/Core'
     au.dependency 'SysdataCore/Keychain'
 
     au.prefix_header_contents = <<-EOS
@@ -106,7 +106,7 @@ EOS
 
     cr.dependency 'SSZipArchive', '0.3.2'
     cr.dependency 'objective-zip', '0.8.3'
-    cr.dependency 'SysdataCore/Core'
+    #cr.dependency 'SysdataCore/Core'
 
     cr.prefix_header_contents = <<-EOS
 #import <SDCrashReport.h>
@@ -117,7 +117,7 @@ EOS
     an.source_files   = 'Code/SDAnalytics.h', 'Code/Analytics'
 
     an.dependency 'GoogleAnalytics-iOS-SDK', '3.10'
-    an.dependency 'SysdataCore/Core'
+    #an.dependency 'SysdataCore/Core'
 
     an.prefix_header_contents = <<-EOS
     #import <SDAnalytics.h>
@@ -130,7 +130,7 @@ EOS
     cd.ios.frameworks = 'CoreData'
 
     cd.dependency 'RestKit', '0.23.3-sysdata1'
-    cd.dependency 'SysdataCore/Core'
+    #cd.dependency 'SysdataCore/Core'
 
     cd.prefix_header_contents = <<-EOS
 #import <SDCoreData.h>
@@ -142,7 +142,7 @@ EOS
 
     dm.dependency 'MagicalRecord/Shorthand', '2.2'
 
-    dm.dependency 'SysdataCore/Core'
+    #dm.dependency 'SysdataCore/Core'
     dm.dependency 'SysdataCore/CoreData'
 
     dm.prefix_header_contents = <<-EOS
@@ -155,7 +155,7 @@ EOS
 
     dw.ios.frameworks = 'SystemConfiguration', 'MobileCoreServices'
 
-    dw.dependency 'SysdataCore/Core'
+    #dw.dependency 'SysdataCore/Core'
     dw.dependency 'AFNetworking', '~> 1.3.0'
 
     dw.prefix_header_contents = <<-EOS
@@ -176,7 +176,7 @@ EOS
   s.subspec 'Location' do |lo|
     lo.source_files   = 'Code/SDLocation.h', 'Code/Location'
 
-    lo.dependency 'SysdataCore/Core'
+    #lo.dependency 'SysdataCore/Core'
 
     lo.prefix_header_contents = <<-EOS
 #import <SDLocation.h>
@@ -186,7 +186,7 @@ EOS
   s.subspec 'Social' do |sc|
     sc.source_files   = 'Code/SDSocial.h', 'Code/Social'
 
-    sc.dependency 'SysdataCore/Core'
+    #sc.dependency 'SysdataCore/Core'
 
     sc.prefix_header_contents = <<-EOS
 #import <SDSocial.h>
@@ -202,7 +202,7 @@ EOS
 
       sycore.ios.frameworks = 'SystemConfiguration', 'MobileCoreServices'
 
-      sycore.dependency 'SysdataCore/Core'
+      #sycore.dependency 'SysdataCore/Core'
       sycore.dependency 'SysdataCore/DataModel'
 
       sycore.prefix_header_contents = <<-EOS
@@ -255,7 +255,7 @@ EOS
       wdcore.source_files   = 'Code/SDWidgets.h', 'Code/Widgets', 'Code/Widgets/Core', 'Code/Widgets/Core/**/*.{h,m}'
       wdcore.resources = 'Code/Widgets/*.{xib}', 'Code/Widgets/Core/*.{xib}', 'Code/Widgets/Core/**/*.{xib}'
 
-      wdcore.dependency 'SysdataCore/Core'
+      #wdcore.dependency 'SysdataCore/Core'
 
       wdcore.prefix_header_contents = <<-EOS
       #import <SDWidgets.h>
@@ -284,7 +284,7 @@ EOS
 
       doccore.source_files   = 'Code/SDDocReader.h', 'Code/DocReader'
 
-      doccore.dependency 'SysdataCore/Core'
+      #doccore.dependency 'SysdataCore/Core'
 
       doccore.prefix_header_contents = <<-EOS
       #import <SDDocReader.h>
