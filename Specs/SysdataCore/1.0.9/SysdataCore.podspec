@@ -44,7 +44,7 @@ EOS
   s.subspec 'Additions' do |ad|
     ad.source_files   = 'Code/SDAdditions.h', 'Code/Additions'
 
-    ad.dependency 'SysdataCore/Core'
+    #ad.dependency 'SysdataCore/Core'
     ad.dependency 'SysdataCore/Logger'
 
     ad.prefix_header_contents = <<-EOS
@@ -67,7 +67,7 @@ EOS
     vc.source_files   = 'Code/SDViewControllers.h', 'Code/ViewControllers', 'Code/ViewControllers/Additions', 'Code/ViewControllers/Base', 'Code/ViewControllers/Containers'
     vc.resources = 'Code/ViewControllers/*.{xib}' , 'Code/ViewControllers/Base/*.{xib}', 'Code/ViewControllers/Containers/*.{xib}'
 
-    vc.dependency 'SysdataCore/Core'
+    #vc.dependency 'SysdataCore/Core'
     vc.dependency 'SysdataCore/Widgets/Core'
 
     vc.prefix_header_contents = <<-EOS
@@ -78,7 +78,7 @@ EOS
   s.subspec 'Workflow' do |wf|
     wf.source_files   = 'Code/SDWorkflow.h', 'Code/Workflow', 'Code/Workflow/Segues'
 
-    wf.dependency 'SysdataCore/Core'
+    #wf.dependency 'SysdataCore/Core'
     wf.prefix_header_contents = <<-EOS
     #import <SDWorkflow.h>
     EOS
