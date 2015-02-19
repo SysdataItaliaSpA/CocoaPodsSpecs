@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.compiler_flags = '-DWITH_TLS', '-DWITH_THREADING'
 
-  s.dependency 'OpenSSL-Universal', '~> 1.0'
+  s.dependency 'OpenSSL-Universal', '~> 1.0.1'
 
 end
