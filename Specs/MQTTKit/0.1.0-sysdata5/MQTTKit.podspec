@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.public_header_files = 'MQTTKit/MQTTKit.h'
 
   s.requires_arc = true
-  s.compiler_flags = '-DWITH_TLS'
+  s.compiler_flags = '-DWITH_TLS', '-DWITH_THREADING'
 
   s.dependency 'OpenSSL-Universal', '~> 1.0'
 
