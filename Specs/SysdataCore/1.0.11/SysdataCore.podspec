@@ -137,13 +137,10 @@ EOS
 EOS
   end
 
-  s.subspec 'ServiceManager' do |cd|
-    cd.source_files   = 'Code/SDService.h', 'Code/ServiceManager'
-
-    cd.dependency 'RestKit', '0.23.3-sysdata1'
-    #cd.dependency 'SysdataCore/Core'
-
-    cd.prefix_header_contents = <<-EOS
+  s.subspec 'ServiceManager' do |sm|
+    sm.source_files   = 'Code/SDService.h', 'Code/ServiceManager'
+    sm.dependency 'RestKit', '0.23.3-sysdata1'
+    sm.prefix_header_contents = <<-EOS
 #import <SDService.h>
 EOS
   end
