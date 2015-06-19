@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |cs|
 
-    cs.source_files   = 'Code/SDCore.h', 'Code/Core'
+    cs.source_files   = 'Code/SDCore.h', 'Code/Core', 'Code/ThemeManager'
 
     cs.dependency 'SysdataCore/Additions'
     cs.dependency 'SysdataCore/Logger'
