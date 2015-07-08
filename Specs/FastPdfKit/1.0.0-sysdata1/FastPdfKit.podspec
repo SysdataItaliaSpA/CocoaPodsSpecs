@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FastPdfKit"
-  s.version      = "1.0.0-sysdata1"
+  s.version      = "1.0.0"
   s.summary      = "FastPDFKit Library"
 
   s.description  = <<-DESC
@@ -74,7 +74,8 @@ Pod::Spec.new do |s|
   #
 
   # s.source       = { :git => "/Users/dramo/Documents/Dev/Private/Github/FastPdfKit" }
-  s.source       = { :git => "https://github.com/SysdataItaliaSpA/FastPdfKit", :tag => "#{s.version}" }
+  # s.source       = { :git => "https://github.com/SysdataItaliaSpA/FastPdfKit", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/mobfarm/FastPdfKit.git", :head }
 
   s.requires_arc   = false
 
