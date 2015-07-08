@@ -75,7 +75,7 @@ Pod::Spec.new do |s|
 
   # s.source       = { :git => "/Users/dramo/Documents/Dev/Private/Github/FastPdfKit" }
   # s.source       = { :git => "https://github.com/SysdataItaliaSpA/FastPdfKit", :tag => "#{s.version}" }
-  s.source       = { :git => "https://github.com/mobfarm/FastPdfKit.git", :head }
+  s.source       = { :git => "https://github.com/mobfarm/FastPdfKit.git" }
 
   s.requires_arc   = false
 
