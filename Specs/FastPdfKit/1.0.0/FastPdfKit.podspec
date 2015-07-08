@@ -77,8 +77,6 @@ Pod::Spec.new do |s|
   # s.source       = { :git => "https://github.com/SysdataItaliaSpA/FastPdfKit", :tag => "#{s.version}" }
   s.source       = { :git => "https://github.com/mobfarm/FastPdfKit.git" }
 
-  s.requires_arc   = false
-
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  CocoaPods is smart about how it includes source code. For source files
